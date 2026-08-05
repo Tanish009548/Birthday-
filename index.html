@@ -1,0 +1,87 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Happy Birthday Sweetuuu ❤️</title>
+
+<style>
+body{
+margin:0;
+font-family:Arial,sans-serif;
+background:linear-gradient(135deg,#ff4d88,#6ec6ff);
+text-align:center;
+color:white;
+overflow:hidden;
+}
+
+h1{
+margin-top:30px;
+font-size:45px;
+text-shadow:0 0 10px white;
+}
+
+img{
+width:280px;
+border-radius:20px;
+border:5px solid white;
+box-shadow:0 0 20px white;
+margin-top:20px;
+}
+
+button{
+padding:12px 25px;
+font-size:18px;
+border:none;
+border-radius:10px;
+background:white;
+color:#ff4d88;
+cursor:pointer;
+margin-top:20px;
+}
+
+.heart{
+position:fixed;
+bottom:-20px;
+font-size:25px;
+animation:float 8s linear infinite;
+}
+
+@keyframes float{
+0%{transform:translateY(0);}
+100%{transform:translateY(-120vh);}
+}
+</style>
+</head>
+
+<body>
+
+<h1>🎉 Happy Birthday 🎉</h1>
+
+<h2>Sweetuuu ❤️</h2>
+
+<h3>22/08/2003</h3>
+
+<img src="photo.jpg">
+
+<br>
+
+<button onclick="document.getElementById('music').play()">
+🎵 Play Birthday Tune
+</button>
+
+<audio id="music" src="birthday-tune.mp3"></audio>
+
+<script>
+for(let i=0;i<40;i++){
+let h=document.createElement("div");
+h.className="heart";
+h.innerHTML="💖";
+h.style.left=Math.random()*100+"vw";
+h.style.animationDelay=Math.random()*8+"s";
+document.body.appendChild(h);
+}
+</script>
+
+</body>
+</html>
