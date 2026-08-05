@@ -1,3 +1,4 @@
+
 <!DOCTYPE html>
 <html lang="en">
 <head>
@@ -5,49 +6,53 @@
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 <title>Happy Birthday Sweetuuu ❤️</title>
 
+<audio autoplay loop>
+  <source src="https://www.soundhelix.com/examples/mp3/SoundHelix-Song-1.mp3" type="audio/mpeg">
+</audio>
+
 <style>
 body{
 margin:0;
+padding:0;
 font-family:Arial,sans-serif;
-background:linear-gradient(135deg,#ff4d88,#6ec6ff);
-text-align:center;
-color:white;
+background:linear-gradient(135deg,#ff4e8b,#6a5cff);
+display:flex;
+justify-content:center;
+align-items:center;
+height:100vh;
 overflow:hidden;
+color:#fff;
+text-align:center;
 }
-
-h1{
-margin-top:30px;
-font-size:45px;
-text-shadow:0 0 10px white;
-}
-
-img{
-width:280px;
+.card{
+background:rgba(255,255,255,0.15);
+padding:30px;
 border-radius:20px;
-border:5px solid white;
-box-shadow:0 0 20px white;
-margin-top:20px;
+box-shadow:0 0 20px rgba(255,255,255,.3);
+animation:zoom 2s infinite alternate;
 }
-
-button{
-padding:12px 25px;
-font-size:18px;
-border:none;
-border-radius:10px;
-background:white;
-color:#ff4d88;
-cursor:pointer;
-margin-top:20px;
+h1{
+font-size:42px;
+margin:0;
 }
-
-.heart{
-position:fixed;
-bottom:-20px;
-font-size:25px;
-animation:float 8s linear infinite;
+h2{
+font-size:28px;
+color:yellow;
 }
-
-@keyframes float{
+p{
+font-size:20px;
+}
+@keyframes zoom{
+from{transform:scale(1);}
+to{transform:scale(1.08);}
+}
+.balloon{
+position:absolute;
+bottom:-100px;
+font-size:40px;
+animation:fly 8s linear infinite;
+}
+@keyframes fly{
 0%{transform:translateY(0);}
 100%{transform:translateY(-120vh);}
 }
@@ -56,32 +61,18 @@ animation:float 8s linear infinite;
 
 <body>
 
-<h1>🎉 Happy Birthday 🎉</h1>
+<div class="balloon" style="left:10%;">🎈</div>
+<div class="balloon" style="left:30%;animation-delay:2s;">🎈</div>
+<div class="balloon" style="left:50%;animation-delay:4s;">🎈</div>
+<div class="balloon" style="left:70%;animation-delay:1s;">🎈</div>
+<div class="balloon" style="left:90%;animation-delay:3s;">🎈</div>
 
+<div class="card">
+<h1>🎂 Happy Birthday 🎂</h1>
 <h2>Sweetuuu ❤️</h2>
-
-<h3>22/08/2003</h3>
-
-<img src="photo.jpg">
-
-<br>
-
-<button onclick="document.getElementById('music').play()">
-🎵 Play Birthday Tune
-</button>
-
-<audio id="music" src="birthday-tune.mp3"></audio>
-
-<script>
-for(let i=0;i<40;i++){
-let h=document.createElement("div");
-h.className="heart";
-h.innerHTML="💖";
-h.style.left=Math.random()*100+"vw";
-h.style.animationDelay=Math.random()*8+"s";
-document.body.appendChild(h);
-}
-</script>
+<p>22/08/2003</p>
+<p>💖 Wishing You Endless Happiness 💖</p>
+</div>
 
 </body>
 </html>
