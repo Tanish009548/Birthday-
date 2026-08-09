@@ -102,9 +102,23 @@ background:#ff6f9f;color:white;box-shadow:0 7px 18px rgba(255,111,159,.35)}
   <p class="note">Tum meri zindagi ka woh khoobsurat hissa ho✨🌝, jise main hamesha apne paas rakhna chahta hoon❤️🫂.Tumhari smile meri favourite feeling hai ❤️
 Tumhare saath bitaya har pal mere liye special hai.I love you Sweety❤️🥺 You are my everything 🫂
  ❤️✨</p>
-  <button id="music">🎵 Play Birthday Tune</button>
+  <button id="music">🎵 Play Heeriye ❤️</button>
+
+<div id="musicPlayer" style="display:none; margin-top:15px;">
+  <iframe
+    width="100%"
+    height="80"
+    src="https://www.youtube.com/embed/RLzC55ai0eo"
+    title="Heeriye"
+    frameborder="0"
+    allow="autoplay; encrypted-media"
+    allowfullscreen>
+  </iframe>
+</div>
 </main>
-<script>
+<script>document.getElementById("music").addEventListener("click", function () {
+  document.getElementById("musicPlayer").style.display = "block";
+});
 function cakeCut(){
   const cake=document.getElementById("cakeBox");
   if(cake){
@@ -124,23 +138,10 @@ document.querySelector("#welcome button").addEventListener("click",cakeCut);func
     e.style.opacity=.7+Math.random()*.3;
     document.body.appendChild(e);
     setTimeout(()=>e.remove(),4500);
-  }
-}
-document.getElementById('music').onclick=()=>{
-  const C=window.AudioContext||window.webkitAudioContext;
-  if(!C) return;
-  const a=new C();
-  // Original simple birthday-style melody (no copyrighted recording).
-  const notes=[262,262,294,262,349,330,262,262,294,262,392,349];
-  notes.forEach((f,i)=>{
-    const o=a.createOscillator(), g=a.createGain();
-    o.type='sine'; o.frequency.value=f; g.gain.setValueAtTime(.0001,a.currentTime+i*.28);
-    g.gain.exponentialRampToValueAtTime(.18,a.currentTime+i*.28+.02);
-    g.gain.exponentialRampToValueAtTime(.0001,a.currentTime+i*.28+.23);
-    o.connect(g).connect(a.destination); o.start(a.currentTime+i*.28); o.stop(a.currentTime+i*.28+.24);
-  });
-  confetti();
-};
+  
+
+
+   
 const cakeBox = document.querySelector('.cake-box');
 
 if (cakeBox) {
