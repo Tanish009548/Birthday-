@@ -116,8 +116,21 @@ Tumhare saath bitaya har pal mere liye special hai.I love you Sweety❤️🥺 Y
   </iframe>
 </div>
 </main>
-<script>document.getElementById("music").addEventListener("click", function () {
-  document.getElementById("musicPlayer").style.display = "block";
+document.getElementById("music").addEventListener("click", function () {
+    const player = document.getElementById("musicPlayer");
+    const iframe = player.querySelector("iframe");
+
+    player.style.display = "block";
+
+    let url = iframe.src;
+
+    if (url.includes("?")) {
+        url += "&autoplay=1";
+    } else {
+        url += "?autoplay=1";
+    }
+
+    iframe.src = url;
 });
 function cakeCut(){
   const cake=document.getElementById("cakeBox");
