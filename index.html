@@ -102,20 +102,11 @@ background:#ff6f9f;color:white;box-shadow:0 7px 18px rgba(255,111,159,.35)}
   <p class="note">Tum meri zindagi ka woh khoobsurat hissa ho✨🌝, jise main hamesha apne paas rakhna chahta hoon❤️🫂.Tumhari smile meri favourite feeling hai ❤️
 Tumhare saath bitaya har pal mere liye special hai.I love you Sweety❤️🥺 You are my everything 🫂
  ❤️✨</p>
-  <button id="music">🎵 Play Heeriye ❤️</button>
-<audio id="musicPlayer" preload="auto">
-  <source src="Heeriye_15_seconds.mp3" type="audio/mpeg">
-</audio>
+  <button onclick="document.getElementById('musicPlayer').play()">
+  ▶ Play Heeriye ❤️
+</button>
 
-</main>
-<script>
-const music = document.getElementById("music");
-const musicPlayer = document.getElementById("musicPlayer");
-
-music.addEventListener("click", function () {
-    musicPlayer.currentTime = 0;
-    musicPlayer.play();
-});
+<audio id="musicPlayer" src="Heeriye_15_seconds.mp3" preload="auto"></audio>
 
 document.querySelector("#welcome button").addEventListener("click",cakeCut);function confetti(){
   for(let i=0;i<55;i++){
