@@ -82,10 +82,49 @@ background:#ff6f9f;color:white;box-shadow:0 7px 18px rgba(255,111,159,.35)}
 0%,100%{transform:rotate(0)}
 25%{transform:rotate(-4deg)}
 75%{transform:rotate(4deg)}
-}</style>
+#surpriseScreen{
+  position:fixed;
+  inset:0;
+  background:linear-gradient(135deg,#ff6b81,#ff9a9e);
+  display:flex;
+  flex-direction:column;
+  align-items:center;
+  justify-content:center;
+  z-index:9999;
+  text-align:center;
+}
+
+.surprise-text{
+  font-size:42px;
+  font-weight:800;
+  animation:pulse 1.2s infinite;
+}
+
+.surprise-sub{
+  font-size:18px;
+  margin:15px 20px;
+}
+
+#surpriseScreen button{
+  padding:13px 25px;
+  border:0;
+  border-radius:999px;
+  background:white;
+  color:#ff4f70;
+  font-size:16px;
+  font-weight:700;
+}
+
+@keyframes pulse{
+  50%{transform:scale(1.12);}
+}}</style>
 </head>
 <body>
-<div class="balloon b1">🎈</div><div class="balloon b2">🎈</div><div class="balloon b3">🎈</div>
+<div id="surpriseScreen">
+  <div class="surprise-text">🎁 Surprise! 🎁</div>
+  <div class="surprise-sub">Something special is waiting for you ❤️</div>
+  <button onclick="openSurprise()">Open Surprise 💖</button>
+</div><div class="balloon b1">🎈</div><div class="balloon b2">🎈</div><div class="balloon b3">🎈</div>
 <div id="welcome" class="card">
   <div style="font-size:50px">🎁❤️</div><div class="cake-box" id="cakeBox">
   🎂
@@ -138,6 +177,9 @@ function openBirthday(){
   document.getElementById("welcome").style.display="none";
   document.getElementById("birthday").style.display="block";
 } 
-</script>
+function openSurprise(){
+  document.getElementById("surpriseScreen").style.display="none";
+  document.getElementById("welcome").style.display="block";
+}</script>
 </body>
 </html>
